@@ -12,9 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (never commit)
 .env
 .env.*
+
+# Vercel
 .vercel
+
+# Imagens antigas (não usadas no site atual)
+public/products/
 
 # Editor directories and files
 .vscode/*
