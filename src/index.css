@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* BELLAVIA - Cyan & White Premium Palette */
+    --background: 0 0% 100%;
+    --foreground: 200 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 15% 15%;
+
+    /* Primary: Cyan/Teal (matching the lion logo) */
+    --primary: 175 50% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Light Gray-Blue */
+    --secondary: 200 20% 96%;
+    --secondary-foreground: 200 15% 20%;
+
+    --muted: 200 10% 95%;
+    --muted-foreground: 200 10% 45%;
+
+    /* Accent: Soft Cyan */
+    --accent: 175 30% 95%;
+    --accent-foreground: 175 50% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 15% 90%;
+    --input: 200 15% 90%;
+    --ring: 175 50% 40%;
+
+    --radius: 0rem;
+
+    /* Custom */
+    --cyan-light: 175 30% 95%;
+    --cyan-dark: 175 50% 30%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(200 15% 15% / 0.03);
+    --shadow-md: 0 4px 6px -1px hsl(200 15% 15% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(200 15% 15% / 0.08);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 200 15% 20%;
+    --sidebar-primary: 175 50% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 175 30% 95%;
+    --sidebar-accent-foreground: 175 50% 30%;
+    --sidebar-border: 200 15% 90%;
+    --sidebar-ring: 175 50% 40%;
+  }
+
+  .dark {
+    --background: 200 20% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 200 20% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 200 20% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 175 50% 50%;
+    --primary-foreground: 200 20% 8%;
+
+    --secondary: 200 20% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 200 15% 18%;
+    --muted-foreground: 200 10% 60%;
+
+    --accent: 175 40% 20%;
+    --accent-foreground: 175 50% 70%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 15% 20%;
+    --input: 200 15% 20%;
+    --ring: 175 50% 50%;
+
+    --sidebar-background: 200 20% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 175 50% 50%;
+    --sidebar-primary-foreground: 200 20% 8%;
+    --sidebar-accent: 175 40% 15%;
+    --sidebar-accent-foreground: 175 50% 70%;
+    --sidebar-border: 200 15% 20%;
+    --sidebar-ring: 175 50% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    text-transform: none;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+  }
+}
+
+@layer components {
+  .bellavia-card {
+    @apply bg-card border border-border shadow-sm transition-shadow duration-300;
+  }
+
+  .bellavia-card:hover {
+    @apply shadow-md;
+  }
+
+  .bellavia-gradient {
+    @apply bg-foreground text-background hover:bg-foreground/90 transition-colors;
+  }
+
+  .bellavia-text-gradient {
+    @apply text-foreground;
+  }
+
+  /* Primary Button Style */
+  .btn-streetwear {
+    @apply inline-block bg-primary text-primary-foreground px-10 py-4 font-display font-bold uppercase tracking-wider border border-primary transition-all duration-300;
+  }
+
+  .btn-streetwear:hover {
+    @apply bg-transparent text-primary;
+  }
+
+  /* Minimal Card */
+  .card-minimal {
+    @apply bg-card transition-all duration-300;
+  }
+
+  .card-minimal:hover {
+    @apply shadow-lg;
+  }
+
+  /* Product Image Container */
+  .product-image-container {
+    @apply bg-secondary aspect-[3/4] relative overflow-hidden;
+  }
+
+  .product-image-container img {
+    @apply h-full w-full object-cover transition-transform duration-500;
+  }
+
+  .product-image-container:hover img {
+    @apply scale-105;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+
+  /* Marquee Animation */
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}

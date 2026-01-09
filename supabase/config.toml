@@ -1,0 +1,13 @@
+project_id = "vcyhaorwzftfityzvebr"
+
+[functions.virtual-fitting]
+verify_jwt = false
+
+[functions.ironpay-sync]
+verify_jwt = false
+
+[functions.ironpay-transaction]
+verify_jwt = false
+
+[functions.ironpay-webhook]
+verify_jwt = false
